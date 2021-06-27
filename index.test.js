@@ -27,4 +27,8 @@ describe(`log-in-color ${env}`, () => {
   test('white', () => {
     expect(white('test')).toEqual('\x1b[37mtest\x1b[0m');
   });
+
+  test('tagging', () => {
+    expect(green`One: ${1}; two: ${2}; three: ${3}.`).toEqual('\x1b[32mOne: 1; two: 2; three: 3.\x1b[0m');
+  });
 });
