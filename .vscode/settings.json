@@ -3,5 +3,9 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
     "editor.action.formatDocument": true
+  },
+  "jest.autoRun": {
+    "watch": false,
+    "onSave": "test-src-file"
   }
 }
