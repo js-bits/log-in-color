@@ -1,4 +1,4 @@
-import { black, red, green, yellow, blue, magenta, cyan, white } from './index.js';
+import { black, red, green, yellow, blue, magenta, cyan, white, css } from './index.js';
 
 describe(`log-in-color`, () => {
   test('black', () => {
@@ -28,5 +28,19 @@ describe(`log-in-color`, () => {
 
   test('tagging', () => {
     expect(green`One: ${1}; two: ${2}; three: ${3}.`).toEqual('\x1b[32mOne: 1; two: 2; three: 3.\x1b[0m');
+    expect(`One: ${red`1`}; two: ${green`2`}; three: ${blue`3`}.`).toEqual(
+      'One: \x1b[31m1\x1b[0m; two: \x1b[32m2\x1b[0m; three: \x1b[34m3\x1b[0m.'
+    );
+  });
+  test('css', () => {
+    expect(css(`RGB: ${red`red`}; ${green`green`}; ${blue`blue`}.`)).toEqual([
+      'RGB: %cred%c; %cgreen%c; %cblue%c.',
+      'color: red;',
+      'color: normal;',
+      'color: green;',
+      'color: normal;',
+      'color: blue;',
+      'color: normal;',
+    ]);
   });
 });

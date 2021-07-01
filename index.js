@@ -9,6 +9,12 @@ const COLOR_CODES = {
   white: 37,
 };
 
+// let's invert COLOR_CODES object
+const CODED_COLORS = Object.entries(COLOR_CODES).reduce((acc, [key, value]) => {
+  acc[String(value)] = key;
+  return acc;
+}, {});
+
 const colorize = colorCode => (strings, ...keys) => {
   let str;
   if (typeof strings === 'string') {
@@ -23,6 +29,15 @@ const methods = Object.keys(COLOR_CODES).reduce((acc, colorName) => {
   acc[colorName] = colorize(COLOR_CODES[colorName]);
   return acc;
 }, {});
+
+export const css = str => {
+  const styles = [];
+  const message = str.replace(/\x1b\[(\d+)m/g, (match, code) => {
+    styles.push(`color: ${code === '0' ? 'normal' : CODED_COLORS[code]};`);
+    return '%c';
+  });
+  return [message, ...styles];
+};
 
 export const { black, red, green, yellow, blue, magenta, cyan, white } = methods;
 
