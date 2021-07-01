@@ -30,7 +30,7 @@ or
 console.log(green`Now: ${new Date()}`); // Now: Sun Jun 27 2021 11:38:15 GMT-0400 (Eastern Daylight Time)
 ```
 
-The approach above work in Chrome and Node.js.
+The approach above works in Chrome, Edge and Node.js.
 All browsers should support a little different format:
 
 ```javascript
