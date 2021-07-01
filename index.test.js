@@ -1,8 +1,6 @@
 import { black, red, green, yellow, blue, magenta, cyan, white } from './index.js';
 
-const env = cyan(`[${typeof window === 'undefined' ? 'node' : 'jsdom'}]`);
-
-describe(`log-in-color ${env}`, () => {
+describe(`log-in-color`, () => {
   test('black', () => {
     expect(black('test')).toEqual('\x1b[30mtest\x1b[0m');
   });
