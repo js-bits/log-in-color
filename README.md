@@ -34,7 +34,7 @@ The approach above works in Chrome, Edge and Node.js.
 All browsers should support a little different format:
 
 ```javascript
-console.log(...css(`RGB: ${red`red`}; ${green`green`}; ${blue`blue`}.`); // RGB: red; green; blue.
+console.log(...css(`RGB: ${red`red`}; ${green`green`}; ${blue`blue`}.`)); // RGB: red; green; blue.
 ```
 
 Use provided `css()` function with a spread operator to convert colored string into a list of CSS styles.
