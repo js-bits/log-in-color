@@ -4,9 +4,11 @@
   "description": "Colorful console logging",
   "keywords": [
     "log",
+    "logging",
     "console",
     "color",
     "colorful",
+    "colored",
     "message"
   ],
   "type": "module",
