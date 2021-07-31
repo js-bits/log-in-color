@@ -33,14 +33,10 @@
   "author": "https://github.com/apolo-gh",
   "license": "ISC",
   "devDependencies": {
-    "@js-bits/formalinter": "^0.1.2",
+    "@js-bits/formalinter": "^0.2.0",
     "@types/jest": "^26.0.23",
     "husky": "^7.0.1",
     "jest": "^27.0.6"
-  },
-  "prettier": "@js-bits/formalinter/.prettierrc.json",
-  "eslintConfig": {
-    "extends": "@js-bits/eslint-config/.eslintrc.json"
   },
   "jest": {
     "projects": [
@@ -53,5 +49,9 @@
         "testEnvironment": "jsdom"
       }
     ]
+  },
+  "prettier": "@js-bits/formalinter/.prettierrc.json",
+  "eslintConfig": {
+    "extends": "@js-bits/eslint-config/.eslintrc.json"
   }
 }
