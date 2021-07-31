@@ -1,4 +1,6 @@
 import { black, red, green, yellow, blue, magenta, cyan, white, css } from './index.js';
+// import { black, red, green, yellow, blue, magenta, cyan, white, css } from './dist/index.cjs';
+// const { black, red, green, yellow, blue, magenta, cyan, white, css } = require('./dist/index.cjs');
 
 describe(`log-in-color`, () => {
   test('black', () => {
