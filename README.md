@@ -16,11 +16,21 @@ Install with yarn:
 yarn add @js-bits/log-in-color
 ```
 
-## How to use
+Import where you need it:
 
 ```javascript
 import { green /* black, red, yellow, blue, magenta, cyan, white */, css } from '@js-bits/log-in-color';
+```
 
+or require for CommonJS:
+
+```javascript
+const { green /* black, red, yellow, blue, magenta, cyan, white */, css } = require('@js-bits/log-in-color');
+```
+
+## How to use
+
+```javascript
 console.log(green('this message is green')); // this message is green
 ```
 
@@ -44,7 +54,3 @@ console.log(...css(`RGB: ${red`red`}; ${green`green`}; ${blue`blue`}.`)); // RGB
 ```
 
 Use provided `css()` function with a spread operator to convert colored string into a list of CSS styles.
-
-## Notes
-
-- Requires [ECMAScript modules](https://nodejs.org/api/esm.html) to be enabled in Node.js environment. Otherwise, compile into a CommonJS module.
