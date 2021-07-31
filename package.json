@@ -21,7 +21,10 @@
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --verbose",
     "test-coverage": "yarn test --coverage",
     "test-watch": "yarn test --watch",
-    "lint": "eslint '**/*.{js,jsx}'"
+    "lint": "eslint '**/*.{js,jsx}'",
+    "husky:pre-commit": "npx husky add .husky/pre-commit \"yarn build\" && npx husky add .husky/pre-commit \"git add dist/**.*\" && git add .husky/pre-commit",
+    "husky:pre-push": "npx husky add .husky/pre-push \"yarn lint\" && npx husky add .husky/pre-push \"yarn test\" && git add .husky/pre-push",
+    "husky:init": "npx husky install && yarn husky:pre-commit && yarn husky:pre-push"
   },
   "repository": {
     "type": "git",
@@ -32,6 +35,7 @@
   "devDependencies": {
     "@js-bits/formalinter": "^0.1.2",
     "@types/jest": "^26.0.23",
+    "husky": "^7.0.1",
     "jest": "^27.0.6"
   },
   "prettier": "@js-bits/formalinter/.prettierrc.json",
