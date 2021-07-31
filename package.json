@@ -12,8 +12,14 @@
     "message"
   ],
   "type": "module",
+  "main": "./dist/index.cjs",
   "module": "./index.js",
-  "exports": "./index.js",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "default": "./index.js"
+    }
+  },
   "engines": {
     "node": ">=12"
   },

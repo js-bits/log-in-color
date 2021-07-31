@@ -13,6 +13,8 @@ const COLOR_CODES = {
   white: 37,
 };
 
+console.log(`log-in-color import mode ${typeof require === 'undefined' ? 'esm' : 'cjs'}`);
+
 // let's invert COLOR_CODES object
 const CODED_COLORS = Object.entries(COLOR_CODES).reduce((acc, [key, value]) => {
   acc[String(value)] = key;
