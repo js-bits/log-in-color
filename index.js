@@ -15,15 +15,17 @@ const CODED_COLORS = Object.entries(COLOR_CODES).reduce((acc, [key, value]) => {
   return acc;
 }, {});
 
-const colorize = colorCode => (strings, ...keys) => {
-  let str;
-  if (typeof strings === 'string') {
-    str = strings;
-  } else {
-    str = `${keys.reduce((acc, key, index) => `${acc}${strings[index]}${key}`, '')}${strings[strings.length - 1]}`;
-  }
-  return `\x1b[${colorCode}m${str}\x1b[0m`;
-};
+const colorize =
+  colorCode =>
+  (strings, ...keys) => {
+    let str;
+    if (typeof strings === 'string') {
+      str = strings;
+    } else {
+      str = `${keys.reduce((acc, key, index) => `${acc}${strings[index]}${key}`, '')}${strings[strings.length - 1]}`;
+    }
+    return `\x1b[${colorCode}m${str}\x1b[0m`;
+  };
 
 const methods = Object.keys(COLOR_CODES).reduce((acc, colorName) => {
   acc[colorName] = colorize(COLOR_CODES[colorName]);
@@ -32,6 +34,7 @@ const methods = Object.keys(COLOR_CODES).reduce((acc, colorName) => {
 
 export const css = str => {
   const styles = [];
+  // eslint-disable-next-line no-control-regex
   const message = str.replace(/\x1b\[(\d+)m/g, (match, code) => {
     styles.push(`color: ${code === '0' ? 'normal' : CODED_COLORS[code]};`);
     return '%c';
