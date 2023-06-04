@@ -1,12 +1,12 @@
 export function css(str: string): string[];
-export function black(strings: string | TemplateStringsArray, ...rest: unknown[]): void;
-export function red(strings: string | TemplateStringsArray, ...rest: unknown[]): void;
-export function green(strings: string | TemplateStringsArray, ...rest: unknown[]): void;
-export function yellow(strings: string | TemplateStringsArray, ...rest: unknown[]): void;
-export function blue(strings: string | TemplateStringsArray, ...rest: unknown[]): void;
-export function magenta(strings: string | TemplateStringsArray, ...rest: unknown[]): void;
-export function cyan(strings: string | TemplateStringsArray, ...rest: unknown[]): void;
-export function white(strings: string | TemplateStringsArray, ...rest: unknown[]): void;
+export function black(strings: string | TemplateStringsArray, ...rest: unknown[]): string;
+export function red(strings: string | TemplateStringsArray, ...rest: unknown[]): string;
+export function green(strings: string | TemplateStringsArray, ...rest: unknown[]): string;
+export function yellow(strings: string | TemplateStringsArray, ...rest: unknown[]): string;
+export function blue(strings: string | TemplateStringsArray, ...rest: unknown[]): string;
+export function magenta(strings: string | TemplateStringsArray, ...rest: unknown[]): string;
+export function cyan(strings: string | TemplateStringsArray, ...rest: unknown[]): string;
+export function white(strings: string | TemplateStringsArray, ...rest: unknown[]): string;
 export type ColorCodes = (typeof COLOR_CODES)[keyof typeof COLOR_CODES] | '0';
 export type ColorNames = keyof typeof COLOR_CODES;
 declare namespace COLOR_CODES {

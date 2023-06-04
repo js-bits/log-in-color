@@ -40,7 +40,7 @@ const colorize =
   };
 
 /**
- * @type {{ [Key in ColorNames]: (strings: string | TemplateStringsArray, ...rest:unknown[]) => void; }}
+ * @type {{ [Key in ColorNames]: (strings: string | TemplateStringsArray, ...rest:unknown[]) => string; }}
  */
 // @ts-ignore
 const methods = Object.keys(COLOR_CODES).reduce((acc, /** @type {ColorNames} */ colorName) => {
