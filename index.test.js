@@ -2,7 +2,7 @@ import { black, red, green, yellow, blue, magenta, cyan, white, css } from './in
 // import { black, red, green, yellow, blue, magenta, cyan, white, css } from './dist/index.cjs';
 // const { black, red, green, yellow, blue, magenta, cyan, white, css } = require('./dist/index.cjs');
 
-describe(`log-in-color`, () => {
+describe('log-in-color', () => {
   test('black', () => {
     expect(black('test')).toEqual('\x1b[30mtest\x1b[0m');
   });
