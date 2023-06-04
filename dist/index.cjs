@@ -1,7 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
 const COLOR_CODES = {
   black: 30,
   red: 31,
