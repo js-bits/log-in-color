@@ -3,6 +3,8 @@
   "version": "0.3.1",
   "description": "Colorful console logging",
   "keywords": [
+    "javascript",
+    "typescript",
     "log",
     "logging",
     "console",
@@ -14,6 +16,7 @@
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "require": "./dist/index.cjs",
